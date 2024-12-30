@@ -4,7 +4,7 @@ node('JDK8'){
 		sh 'git clone --branch sprint1-develop --depth 1 https://github.com/DuyDinhhh/game-of-life.git'
 	}
 	stage('Build the code'){
-		sh 'mvn clean package'
+		sh 'mvn package'
 	}
 	stage('Archiving and Test Results'){
 		junit '**/surefire-reports/*.xml'
