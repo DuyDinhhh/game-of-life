@@ -1,7 +1,7 @@
 node('JDK8'){
 	stage('Sourcecode'){
 		sh 'git config --global http.version HTTP/1.1' 
-		git branch: 'sprint1-develop', url: 'https://github.com/DuyDinhhh/game-of-life.git'
+		sh 'git clone --branch sprint1-develop --depth 1 https://github.com/DuyDinhhh/game-of-life.git'
 	}
 	stage('Build the code'){
 		sh 'mvn clean package'
